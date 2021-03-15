@@ -8,7 +8,7 @@ exports.sendAlert = (req, res) => {
     const { farmers } = req.body
     const to = '+254705850838'
     const sms = AfricasTalking.SMS
-    const message = `Collection in Your Buying Center Soon`
+    const message = `Collection in Your Buying Center Soon,  Hurry Up`
     sms.send({ to, message, enque: true })
       .then(() => {
       })

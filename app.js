@@ -12,7 +12,7 @@ mongoose.connection.once('open',()=>{
   console.log('connected to mongodb')
 })
 app.use(bodyParser.json())
-// app.use(cors())
+app.use(cors())
 
 app.use('/api/v1/auth', authRoutes)
 app.use('/api/v1/alert', alertRoutes)

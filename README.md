@@ -1,2 +1,2 @@
 # ubunifu-hackathon
-Alert System for Tea Farmers.
+Alert System for Farmers.

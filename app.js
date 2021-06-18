@@ -1,7 +1,6 @@
 const express = require('express')
 const cors = require('cors')
 const mongoose = require('mongoose')
-const bodyParser = require('body-parser')
 const authRoutes = require('./routes/auth')
 const alertRoutes = require('./routes/alert')
 
@@ -11,7 +10,7 @@ mongoose.connect('mongodb+srv://mesh:omriFCJCaIuSr1nx@misheckilo-freecluster.fcm
 mongoose.connection.once('open',()=>{
   console.log('connected to mongodb')
 })
-app.use(bodyParser.json())
+app.use(express.json())
 app.use(cors())
 
 app.use('/api/v1/auth', authRoutes)

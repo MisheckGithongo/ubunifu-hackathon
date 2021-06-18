@@ -6,13 +6,14 @@ const AfricasTalking = require('africastalking')({ apiKey: process.env.AT_KEY, u
 
 exports.sendAlert = (req, res) => {
     const { farmers } = req.body
-    const to = '+254705850838'
+    const to = [farmers]
     const sms = AfricasTalking.SMS
-    const message = `Collection in Your Buying Center Soon,  Hurry Up`
+    const message = "Collection in Your Buying Center Soon,  Hurry Up"
     sms.send({ to, message, enque: true })
       .then(() => {
+        res.status(200).json({ status: 'success', message: 'alerts sent' })
       })
       .catch(() => {
+        res.status(400).json({ status: 'failed', message: 'unable to alerts' })
       })
-    res.status(200).json({ status: 'success', message: 'alert sent' })
 }

@@ -18,7 +18,7 @@ exports.driverLogin = async (req, res) => {
       const accessToken = jsonwebtoken.sign(
         { id: driver.id, driverNo: driver.driverNo },
         process.env.JWT_SECRET,
-        { expiresIn: '1y' },
+        { expiresIn: '12hr' },
       )
       const data = {
           accessToken,

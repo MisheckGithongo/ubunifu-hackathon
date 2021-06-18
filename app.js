@@ -3,10 +3,11 @@ const cors = require('cors')
 const mongoose = require('mongoose')
 const authRoutes = require('./routes/auth')
 const alertRoutes = require('./routes/alert')
+const connStr = process.env.DB_CONN
 
 const app = express()
 
-mongoose.connect('mongodb+srv://mesh:omriFCJCaIuSr1nx@misheckilo-freecluster.fcmvh.mongodb.net/mbcalert?retryWrites=true&w=majority')
+mongoose.connect(connStr)
 mongoose.connection.once('open',()=>{
   console.log('connected to mongodb')
 })
